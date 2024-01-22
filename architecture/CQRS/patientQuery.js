@@ -1,7 +1,15 @@
 const patientQueryDAO = require('./patientQueryDAO')
 
+function getPatientListList() {
+    return patientQueryDAO.retrievePatientListList()
+}
+
 function getPatientList() {
     return patientQueryDAO.retrievePatientList()
+}
+
+function getPatientCache() {
+    return patientQueryDAO.retrievePatientCache()
 }
 
 function getPatient(id) {
@@ -13,4 +21,4 @@ function getPatient(id) {
     
 }
 
-module.exports = { getPatientList, getPatient }
+module.exports = { getPatientListList, getPatientCache, getPatientList, getPatient }

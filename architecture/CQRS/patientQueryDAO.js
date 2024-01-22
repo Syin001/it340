@@ -1,7 +1,16 @@
 const database = require('./database')
+const databasecache = require('./cache')
+
+function retrievePatientListList() {
+    return database.patientList;
+}
 
 function retrievePatientList() {
-    return database.patientList;
+    return database.patients;
+}
+
+function retrievePatientCache() {
+    return databasecache.patients;
 }
 
 function retrievePatient(id) {
@@ -15,4 +24,4 @@ function retrievePatient(id) {
     throw Error("Invalid id");
 }
 
-module.exports = { retrievePatientList, retrievePatient }
+module.exports = { retrievePatientListList, retrievePatientCache, retrievePatientList, retrievePatient }

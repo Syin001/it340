@@ -23,8 +23,8 @@ function updatePatient(patient) {
     let i = 0
     database.patients.forEach(patientData => {
         if (patientData.id == patient.id) {
-            patient.creationDate = database.patients[i].creationDate;
-            database.patients[i] = patient
+            database.patients[i].firstName = patient.firstName;
+            database.patients[i].lastName = patient.lastName;
         }
         i++
     });
